@@ -63,5 +63,53 @@ namespace GwentLibrary
             }
             return totalDamage;
         }
+
+        public List<object> MostPowerfulCard() //analiza cual es la mayor carta del campo y la devuelve en una lista junto con la fila en la que se encuentra
+        {
+            Unit unit=null;
+            List<Card> list = null;
+
+            foreach (Unit item in this.Melee)
+            {
+                if (unit==null)
+                {
+                    unit = item;
+                    list = this.Melee;
+                }
+                else if (unit.Damage < item.Damage)
+                {
+                    unit = item;
+                    list = this.Melee;
+                }
+            }
+            foreach (Unit item in this.Range)
+            {
+                if (unit == null)
+                {
+                    unit = item;
+                    list = this.Range;
+                }
+                else if (unit.Damage < item.Damage)
+                {
+                    unit = item;
+                    list = this.Range;
+                }
+            }
+            foreach (Unit item in this.Siege)
+            {
+                if (unit == null)
+                {
+                    unit = item;
+                    list = this.Siege;
+                }
+                else if (unit.Damage < item.Damage)
+                {
+                    unit = item;
+                    list = this.Siege;
+                }
+            }
+
+            return new List<object> { unit, list};
+        }
     }
 }

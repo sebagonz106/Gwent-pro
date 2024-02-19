@@ -15,6 +15,9 @@ namespace GwentLibrary
             this.player2 = player2;
         }
 
+        public Player Player1 { get => player1; }
+        public Player Player2 { get => player2; }
+
         public void NextRound()
         {
             if (player1.EndRound&&player2.EndRound)
