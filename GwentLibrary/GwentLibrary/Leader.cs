@@ -7,7 +7,7 @@ namespace GwentLibrary
     public class Leader : Card
     {
         Effect effect;
-        public Leader(Faction faction, string name, string description, Effect effect) : base(faction, name, description)
+        public Leader(Faction faction, CardType cardType, string name, string description, Effect effect) : base(faction, cardType, name, description)
         {
             this.effect = effect;
         }

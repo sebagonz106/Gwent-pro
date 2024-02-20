@@ -7,7 +7,7 @@ namespace GwentLibrary
     public class Bonus : Card
     {
         double increase;
-        public Bonus(Faction faction, string name, string description, double bonus) : base(faction, name, description)
+        public Bonus(Faction faction, CardType cardType, string name, string description, double bonus) : base(faction, cardType, name, description)
         {
             this.increase = bonus;
         }

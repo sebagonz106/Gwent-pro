@@ -6,12 +6,15 @@ namespace GwentLibrary
 {
     public class Battlefield
     {
+        #region Fields
         List<Card> melee = new List<Card>();
         List<Card> range = new List<Card>();
         List<Card> siege = new List<Card>();
         List<Card> graveyard = new List<Card>();
         Bonus[] bonus = new Bonus[3]; //0: melee, 1: range, 2: siege
+        #endregion
 
+        #region Properties and Builder
         public Battlefield(List<Card> melee, List<Card> range, List<Card> siege, List<Card> graveyard, Bonus[] bonus)
         {
             this.melee = melee;
@@ -26,7 +29,9 @@ namespace GwentLibrary
         public List<Card> Siege { get => siege; set => siege = value; }
         public Bonus[] Bonus { get => bonus; set => bonus = value; }
         public List<Card> Graveyard { get => graveyard; set => graveyard = value; }
+        #endregion
 
+        #region Methods
         public void ToGraveyard(Card card, List<Card> list)
         {
             Graveyard.Add(card);
@@ -43,28 +48,8 @@ namespace GwentLibrary
             this.siege.Clear();
             this.bonus = new Bonus[3];
         }
-        public double TotalDamage()
-        {
-            double totalDamage = 0;
-            foreach(Card item in Melee)
-            {
-                if (item is Weather weather) weather.Effect(Melee);
-                if (item is Unit unit) totalDamage += bonus[0].Increase*unit.Damage;
-            }
-            foreach (Card item in Range)
-            {
-                if (item is Weather weather) weather.Effect(Range);
-                if (item is Unit unit) totalDamage += bonus[1].Increase*unit.Damage;
-            }
-            foreach (Card item in Range)
-            {
-                if (item is Weather weather) weather.Effect(Siege);
-                if (item is Unit unit) totalDamage += bonus[2].Increase * unit.Damage;
-            }
-            return totalDamage;
-        }
-
-        public List<object> MostPowerfulCard() //analiza cual es la mayor carta del campo y la devuelve en una lista junto con la fila en la que se encuentra
+        
+        public List<object> MostPowerfulCard() //analiza cual es la carta mas poderosa del campo y la devuelve en una lista junto con la fila en la que se encuentra
         {
             Unit unit=null;
             List<Card> list = null;
@@ -111,5 +96,6 @@ namespace GwentLibrary
 
             return new List<object> { unit, list};
         }
+        #endregion
     }
 }

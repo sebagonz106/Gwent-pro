@@ -6,7 +6,7 @@ namespace GwentLibrary
 {
     public class Bait : Card
     {
-        public Bait(Faction faction, string name, string description) : base(faction, name, description)
+        public Bait(Faction faction, CardType cardType, string name, string description) : base(faction, cardType, name, description)
         {
         }
 

@@ -9,7 +9,8 @@ namespace GwentLibrary
         double damage = 0;
         Level level;
         Effect effect;
-        public Unit(Faction faction, string name, string description, double damage, Level level, Effect effect) : base(faction, name, description)
+
+        public Unit(Faction faction, CardType cardType, string name, string description, double damage, Level level, Effect effect) : base(faction, cardType, name, description)
         {
             this.damage = damage;
             this.level = level;

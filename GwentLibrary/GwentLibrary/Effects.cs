@@ -13,9 +13,9 @@ namespace GwentLibrary
                 item.Damage *= ((Bonus)parameters[1]).Increase;
             }
         }
-        public static void PlaceWeather(params object[] parameters)//List<Card>, Weather, int
+        public static void PlaceWeather(params object[] parameters)//Weather, Board, int
         {
-            ((Weather)parameters[1]).Effect((List<Card>)parameters[0], (int)parameters[2]); //aplica un clima que no puede ser removido por ninguna carta de despeje. queda pendiente hacer que se aplique a mas de una fila
+            ((Weather)parameters[0]).Effect((Board)parameters[1], (int)parameters[2]); //aplica un clima mas leve pero que no puede ser removido por ninguna carta de despeje
         }
         public static void RemovePowerfulCard(params object[] parameters)//Board
         {
