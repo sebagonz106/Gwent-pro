@@ -37,9 +37,10 @@ namespace GwentLibrary
             }
             //si no hay ninguna carta jugada al momento de activarse el poder, no hace nada (cosa que no va a pasar pues al menos va a estar en el campo la carta que activa este poder)
         }
-
-
-
+        public static void RemoveEnemyWorstCard(params object[] parameters)//Player
+        {
+            ((Player)parameters[0]).Battlefield.ToGraveyard(((Unit)((Player)parameters[0]).Battlefield.LeastPowerfulCard()[0]), ((List<Card>)((Player)parameters[0]).Battlefield.LeastPowerfulCard()[1])); //envia al cementerio la carta menos poderosa del jugador recibido
+        }
         #region Sin Usar
         //sin usar, no los borro por si me hacen falta mas adelante
         public static void Decrement(List<Battlefield> battlefields, List<CardType> affectedTypes, int value)
