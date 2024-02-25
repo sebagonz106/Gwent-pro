@@ -54,45 +54,9 @@ namespace GwentLibrary
             Unit unit=null;
             List<Card> list = null;
 
-            foreach (Unit item in this.Melee)
-            {
-                if (unit==null)
-                {
-                    unit = item;
-                    list = this.Melee;
-                }
-                else if (unit.Damage < item.Damage)
-                {
-                    unit = item;
-                    list = this.Melee;
-                }
-            }
-            foreach (Unit item in this.Range)
-            {
-                if (unit == null)
-                {
-                    unit = item;
-                    list = this.Range;
-                }
-                else if (unit.Damage < item.Damage)
-                {
-                    unit = item;
-                    list = this.Range;
-                }
-            }
-            foreach (Unit item in this.Siege)
-            {
-                if (unit == null)
-                {
-                    unit = item;
-                    list = this.Siege;
-                }
-                else if (unit.Damage < item.Damage)
-                {
-                    unit = item;
-                    list = this.Siege;
-                }
-            }
+            CompareListCards(unit, list, this.Melee, true);
+            CompareListCards(unit, list, this.Range, true);
+            CompareListCards(unit, list, this.Siege, true);
 
             return new List<object> { unit, list};
         }
@@ -101,47 +65,36 @@ namespace GwentLibrary
             Unit unit = null;
             List<Card> list = null;
 
-            foreach (Unit item in this.Melee)
-            {
-                if (unit == null)
-                {
-                    unit = item;
-                    list = this.Melee;
-                }
-                else if (unit.Damage > item.Damage)
-                {
-                    unit = item;
-                    list = this.Melee;
-                }
-            }
-            foreach (Unit item in this.Range)
-            {
-                if (unit == null)
-                {
-                    unit = item;
-                    list = this.Range;
-                }
-                else if (unit.Damage > item.Damage)
-                {
-                    unit = item;
-                    list = this.Range;
-                }
-            }
-            foreach (Unit item in this.Siege)
-            {
-                if (unit == null)
-                {
-                    unit = item;
-                    list = this.Siege;
-                }
-                else if (unit.Damage > item.Damage)
-                {
-                    unit = item;
-                    list = this.Siege;
-                }
-            }
+            CompareListCards(unit, list, this.Melee, false);
+            CompareListCards(unit, list, this.Range, false);
+            CompareListCards(unit, list, this.Siege, false);
 
             return new List<object> { unit, list };
+        }
+        private void CompareListCards(Unit unit, List<Card> listToSave, List<Card> listToCheck, bool HigherOrLowestDamage)
+        {
+            if (HigherOrLowestDamage) //gets card with higher damage
+            {
+                foreach (Unit item in listToCheck)
+                {
+                    if (unit == null || unit.Damage < item.Damage)
+                    {
+                        unit = item;
+                        listToSave = listToCheck;
+                    }
+                }
+            }
+            else //gets card with lower damage
+            {
+                foreach (Unit item in listToCheck)
+                {
+                    if (unit == null || unit.Damage > item.Damage)
+                    {
+                        unit = item;
+                        listToSave = listToCheck;
+                    }
+                }
+            }
         }
         #endregion
     }
