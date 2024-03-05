@@ -1549,7 +1549,7 @@ PrefabInstance:
       objectReference: {fileID: 24100000, guid: 37664da6729c9b94fb060f015dbef1d9, type: 2}
     - target: {fileID: 3456012622388476597, guid: 8d0973ea17edeec44a6bd4d7f4b6d4a3, type: 3}
       propertyPath: m_Value
-      value: -0.108
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3456012622388476597, guid: 8d0973ea17edeec44a6bd4d7f4b6d4a3, type: 3}
       propertyPath: m_MaxValue
@@ -1557,7 +1557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3456012622388476597, guid: 8d0973ea17edeec44a6bd4d7f4b6d4a3, type: 3}
       propertyPath: m_MinValue
-      value: -80
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 3456012622388476597, guid: 8d0973ea17edeec44a6bd4d7f4b6d4a3, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
