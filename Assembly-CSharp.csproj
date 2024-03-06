@@ -55,6 +55,7 @@
     <UnityVersion>2022.3.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
   </ItemGroup>
