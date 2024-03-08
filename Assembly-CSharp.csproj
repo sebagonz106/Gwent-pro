@@ -56,8 +56,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Unit.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Battlefield.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Leader.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Utils.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Bait.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Weather.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Card.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Clear.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Effects.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\obj\Debug\netstandard2.0\GwentLibrary.AssemblyInfo.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Bonus.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\CardsWarehouse.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Board.cs" />
+    <Compile Include="Assets\GwentLibrary\GwentLibrary\Player.cs" />
     <Compile Include="Assets\Scripts\CardsInHandController.cs" />
   </ItemGroup>
   <ItemGroup>
