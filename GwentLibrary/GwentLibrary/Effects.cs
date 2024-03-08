@@ -10,7 +10,7 @@ namespace GwentLibrary
         {
             foreach (Unit item in (List<Card>)parameters[0])
             {
-                item.Damage *= ((Bonus)parameters[1]).Increase;
+                if(item.Level==Level.Silver) item.Damage *= ((Bonus)parameters[1]).Increase;
             }
         }
         public static void PlaceWeather(params object[] parameters)//Weather, Board, int
@@ -30,16 +30,17 @@ namespace GwentLibrary
             {
                 ((Board)parameters[0]).Player1.Battlefield.ToGraveyard(((Unit)listPlayer1[0]), ((List<Card>)listPlayer1[1]));
             }
-            else if (((Unit)listPlayer1[0]).Damage == ((Unit)listPlayer2[0]).Damage) //analiza si las cartas mas poderosas de ambos jugadores son iguales, y si se ejecuta manda ambas al cementerio.
+            else if (((Unit)listPlayer1[0]).Damage == ((Unit)listPlayer2[0]).Damage) //analiza si las cartas mas poderosas de ambos jugadores son iguales, y si se ejecuta envia ambas al cementerio.
             {
                 ((Board)parameters[0]).Player2.Battlefield.ToGraveyard(((Unit)listPlayer2[0]), ((List<Card>)listPlayer2[1]));
                 ((Board)parameters[0]).Player1.Battlefield.ToGraveyard(((Unit)listPlayer1[0]), ((List<Card>)listPlayer1[1]));
             }
             //si no hay ninguna carta jugada al momento de activarse el poder, no hace nada (cosa que no va a pasar pues al menos va a estar en el campo la carta que activa este poder)
         }
-
-
-
+        public static void RemoveEnemyWorstCard(params object[] parameters)//Player
+        {
+            ((Player)parameters[0]).Battlefield.ToGraveyard(((Unit)((Player)parameters[0]).Battlefield.LeastPowerfulCard()[0]), ((List<Card>)((Player)parameters[0]).Battlefield.LeastPowerfulCard()[1])); //envia al cementerio la carta menos poderosa del jugador recibido
+        }
         #region Sin Usar
         //sin usar, no los borro por si me hacen falta mas adelante
         public static void Decrement(List<Battlefield> battlefields, List<CardType> affectedTypes, int value)
