@@ -18,7 +18,6 @@ namespace GwentLibrary
         }
 
         public double Damage { get => damage; set => damage = value; }
-        public Level Level { get => level; set => level = value; }
         public void Effect (params object[] parameters) { effect?.Invoke(parameters); }
     }
 }

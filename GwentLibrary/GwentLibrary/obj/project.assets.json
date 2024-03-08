@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent-Pro ClassLibrary and Media\\Gwent pro\\GwentLibrary\\GwentLibrary\\GwentLibrary.csproj",
+      "projectUniqueName": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent pro\\GwentLibrary\\GwentLibrary\\GwentLibrary.csproj",
       "projectName": "GwentLibrary",
-      "projectPath": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent-Pro ClassLibrary and Media\\Gwent pro\\GwentLibrary\\GwentLibrary\\GwentLibrary.csproj",
+      "projectPath": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent pro\\GwentLibrary\\GwentLibrary\\GwentLibrary.csproj",
       "packagesPath": "C:\\Users\\Sebastian\\.nuget\\packages\\",
-      "outputPath": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent-Pro ClassLibrary and Media\\Gwent pro\\GwentLibrary\\GwentLibrary\\obj\\",
+      "outputPath": "D:\\UH\\Año 1\\Primer Semestre\\Programacion\\Gwent pro\\GwentLibrary\\GwentLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -17,27 +17,38 @@ namespace GwentLibrary
         {
             if (this.affectedTypes.Contains(CardType.Melee)) //si afecta melee, reduce daño en las cartas de unidad de la fila melee de ambos jugadores
             {
-                ReduceSilverCardPower(board.Player1.Battlefield.Melee, value);
-                ReduceSilverCardPower(board.Player2.Battlefield.Melee, value);
+                foreach (Unit item in board.Player1.Battlefield.Melee)
+                {
+                    item.Damage -= value;
+                }
+                foreach (Unit item in board.Player2.Battlefield.Melee)
+                {
+                    item.Damage -= value;
+                }
             }
             if (this.affectedTypes.Contains(CardType.Range)) //si afecta range, reduce daño en las cartas de unidad de la fila range de ambos jugadores
             {
-                ReduceSilverCardPower(board.Player1.Battlefield.Range, value);
-                ReduceSilverCardPower(board.Player2.Battlefield.Range, value);
+                foreach (Unit item in board.Player1.Battlefield.Range)
+                {
+                    item.Damage -= value;
+                }
+                foreach (Unit item in board.Player2.Battlefield.Range)
+                {
+                    item.Damage -= value;
+                }
             }
             if (this.affectedTypes.Contains(CardType.Siege)) //si afecta Siege, reduce daño en las cartas de unidad de la fila Siege de ambos jugadores
             {
-                ReduceSilverCardPower(board.Player1.Battlefield.Siege, value);
-                ReduceSilverCardPower(board.Player2.Battlefield.Siege, value);
+                foreach (Unit item in board.Player1.Battlefield.Siege)
+                {
+                    item.Damage -= value;
+                }
+                foreach (Unit item in board.Player2.Battlefield.Siege)
+                {
+                    item.Damage -= value;
+                }
             }
 
-        }
-        private void ReduceSilverCardPower(List<Card> list, int value)
-        {
-            foreach (Unit item in list)
-            {
-                if (item.Level == Level.Silver) item.Damage -= value;
-            }
         }
     }
 }
